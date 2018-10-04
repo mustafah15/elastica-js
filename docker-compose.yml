@@ -1,0 +1,20 @@
+version: '3'
+services:
+  node:
+    tty: true
+    stdin_open: true
+    container_name: elastica-js
+    env_file:
+      - ./.env
+    depends_on:
+      - elastic
+    build:
+      context: .
+    volumes:
+      - .:/var/code:rw
+    entrypoint: './startup.sh'
+
+  elastic:
+    image: 'docker.elastic.co/elasticsearch/elasticsearch:6.4.2'
+    environment:
+      - xpack.security.enabled=false
