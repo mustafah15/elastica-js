@@ -1,3 +1,3 @@
-Elastica-js
+# Elastica-js
 
-Mange elasticsearch dbs
+Mange your elasticsearch dbs
